@@ -1,0 +1,92 @@
+.section-education {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-bg);
+}
+
+.education-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-accent);
+}
+
+.edu-icon {
+  background: rgba(244, 114, 182, 0.1); /* Pink tint */
+  padding: 1rem;
+  border-radius: 12px;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu-content {
+  flex: 1;
+}
+
+.edu-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #fff, #ccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.edu-degree {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  
+}
+
+.edu-details {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.edu-date, .edu-gpa {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.edu-description {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-lg);
+  }
+
+  .edu-details {
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+}

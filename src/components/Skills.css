@@ -1,0 +1,84 @@
+.section-skills {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: var(--spacing-lg);
+}
+
+.skill-category {
+  background: var(--color-bg);
+  padding: var(--spacing-xl);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: var(--spacing-md);
+}
+
+.category-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.skill-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid transparent; /* Prepare for hover border */
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Fixed width for alignment */
+  height: 20px;
+}
+
+.skill-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-list li:hover {
+  background: var(--accent-color);
+  color: var(--color-text);
+  /* Use a darker text if the accent is very bright? But for now white text is usually fine */
+  color: white; 
+}
