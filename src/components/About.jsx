@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin } from 'lucide-react';
 import selfPhoto from '../assets/selfphoto.png';
 import './About.css';
 
@@ -12,6 +13,12 @@ const About = () => {
           <div className="about-profile">
             <div className="profile-image-container">
               <img src={selfPhoto} alt="Harun Jeynaro" className="profile-image" />
+            </div>
+            <div className="profile-details">
+              <h3 className="profile-name">Harun Jeynaro Dewantoro Putra</h3>
+              <p className="profile-location">
+                <MapPin size={16} /> Malang, Indonesia
+              </p>
             </div>
           </div>
           
