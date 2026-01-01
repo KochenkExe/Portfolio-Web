@@ -177,7 +177,7 @@
   
   .hero-visual {
     margin-top: var(--spacing-xl);
-    display: none; /* Hide complex visual on mobile or simplify */
+    display: none; 
   }
 }
 
@@ -206,7 +206,6 @@
   }
 }
 
-/* Very narrow phones (360px and below) */
 @media (max-width: 400px) {
   .hero-content {
     padding-top: 80px;

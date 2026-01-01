@@ -134,11 +134,11 @@
   transform: translateY(-3px);
 }
 
-/* Role Color Accents */
-.role-ba { border-left: 4px solid #38bdf8; } /* Sky Blue */
-.role-da { border-left: 4px solid #34d399; } /* Green */
-.role-fe { border-left: 4px solid #f472b6; } /* Pink */
-.role-ml { border-left: 4px solid #a78bfa; } /* Purple */
+/* Role Card Color Accents - Scoped to prevent conflict with Hero */
+.role-card.role-ba { border-left: 4px solid #38bdf8; } /* Sky Blue */
+.role-card.role-da { border-left: 4px solid #34d399; } /* Green */
+.role-card.role-fe { border-left: 4px solid #f472b6; } /* Pink */
+.role-card.role-ml { border-left: 4px solid #a78bfa; } /* Purple */
 
 .role-ba .role-icon { color: #38bdf8; }
 .role-da .role-icon { color: #34d399; }
