@@ -8,6 +8,7 @@ import Achievements from './components/Achievements'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import './App.css'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Achievements />
       <Projects />
       <Contact />
+      <Analytics />
     </div>
   )
 }

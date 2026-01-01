@@ -46,7 +46,10 @@ const Skills = () => {
         { name: 'Matplotlib', image: matplotlibIcon },
         { name: 'Seaborn', image: seabornIcon }, 
         { name: 'Scikit-learn', image: getIconUrl('scikitlearn') },
-        { name: 'Jupyter', image: getIconUrl('jupyter') }
+        { name: 'TensorFlow', image: getIconUrl('tensorflow') },
+        { name: 'PyTorch', image: getIconUrl('pytorch') },
+        { name: 'Jupyter', image: getIconUrl('jupyter') },
+        { name: 'Anaconda', image: getIconUrl('anaconda') },
       ]
     },
     {
