@@ -82,3 +82,15 @@
   /* Use a darker text if the accent is very bright? But for now white text is usually fine */
   color: white; 
 }
+
+@media (max-width: 480px) {
+  .skill-category {
+    padding: var(--spacing-md);
+  }
+  
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+}

@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
       </div>
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()}. Built with React & Vite.</p>
+        <p>&copy; {new Date().getFullYear()}. Built with ♥️</p>
       </footer>
     </section>
   );

@@ -71,3 +71,13 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .achievement-card {
+    padding: var(--spacing-md);
+  }
+  
+  .achievement-content h3 {
+    font-size: 1.25rem;
+  }
+}

@@ -154,5 +154,25 @@
   
   .profile-image-container {
     margin: 0 auto;
+    max-width: 100%; /* Ensure it doesn't overflow small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .profile-image-container {
+    width: 200px;
+    height: 320px;
+  }
+  
+  .about-stats {
+    gap: var(--spacing-sm);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
   }
 }

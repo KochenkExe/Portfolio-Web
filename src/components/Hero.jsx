@@ -14,7 +14,7 @@ const Hero = () => {
             <span className="role-fe">Technical Execution</span>
           </h1>
           <p className="subtitle">
-            I create seamless digital experiences by combining <strong>Business Analysis</strong> with <strong>Front End Engineering</strong> expertise.
+            I create seamless digital experiences by combining <strong>Business Skills</strong> with <strong>Technical</strong> expertise.
           </p>
           
           <div className="hero-actions">

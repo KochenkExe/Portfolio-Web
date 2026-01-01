@@ -180,3 +180,28 @@
     display: none; /* Hide complex visual on mobile or simplify */
   }
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .greeting {
+    font-size: 0.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

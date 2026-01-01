@@ -97,3 +97,14 @@
     z-index: 999;
   }
 }
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .nav {
+    top: var(--header-height); /* Uses the updated smaller height from index.css */
+    padding: var(--spacing-md);
+  }
+}

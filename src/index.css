@@ -86,3 +86,23 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-muted);
 }
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 70px;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 3rem;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+}

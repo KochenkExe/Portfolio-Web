@@ -19,7 +19,7 @@ const Education = () => {
                 <Calendar size={16} /> August 2023 - Present
               </span>
               <span className="edu-gpa">
-                <Award size={16} /> GPA: 3.70 / 4.00
+                <Award size={16} /> GPA: 3.70
               </span>
             </div>
             <p className="edu-description">

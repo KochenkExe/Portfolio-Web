@@ -80,3 +80,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .social-icons {
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+}

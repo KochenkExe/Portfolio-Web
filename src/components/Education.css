@@ -90,3 +90,32 @@
     gap: var(--spacing-md);
   }
 }
+
+@media (max-width: 480px) {
+  .education-card {
+    padding: var(--spacing-md);
+  }
+  
+  .edu-icon {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .edu-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .edu-degree {
+    font-size: 1rem;
+  }
+  
+  .edu-details {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+  
+  .edu-date, .edu-gpa {
+    width: 100%;
+    justify-content: center;
+  }
+}
