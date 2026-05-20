@@ -33,6 +33,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
   border: 2px solid var(--color-black);
   background-color: var(--card-accent);
   color: var(--color-black);
@@ -79,6 +80,7 @@
   justify-content: center;
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
 }
 
 .skill-item-icon img {

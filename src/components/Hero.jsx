@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, GraduationCap, Trophy, Search, BarChart3, Lightbulb } from 'lucide-react';
+import { ArrowRight, Sparkles, Terminal } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -33,43 +33,36 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column Stack */}
-        <div className="hero-stack-column">
-          {/* Card 2: Academic Profile */}
-          <div className="bento-card hero-stat-card academic-card">
-            <div className="stat-card-row">
-              <div className="stat-icon-box">
-                <GraduationCap size={24} />
-              </div>
-              <div className="stat-content">
-                <span className="stat-label">Education</span>
-                <h3 className="stat-value">Brawijaya University</h3>
-                <p className="stat-subtext">Information Systems Major</p>
-              </div>
+        {/* Right Column: Code Terminal Card */}
+        <div className="bento-card hero-visual-card">
+          <div className="card-topbar">
+            <div className="dots-group">
+              <span className="dot dot-red"></span>
+              <span className="dot dot-yellow"></span>
+              <span className="dot dot-green"></span>
             </div>
-            <div className="gpa-badge">
-              <Trophy size={16} />
-              <span>GPA 3.70</span>
+            <div className="window-title">
+              <Terminal size={14} />
+              <span>profile.js</span>
             </div>
           </div>
-
-          {/* Card 3: Philosophy / Pillars */}
-          <div className="bento-card hero-stat-card pillars-card">
-            <h4 className="pillars-title">Core Approach</h4>
-            <div className="pillars-list">
-              <div className="pillar-item">
-                <span className="pillar-icon pi-ba"><Search size={14} /></span>
-                <span className="pillar-text">Elicit Requirements</span>
-              </div>
-              <div className="pillar-item">
-                <span className="pillar-icon pi-da"><BarChart3 size={14} /></span>
-                <span className="pillar-text">Transform &amp; Analyze Data</span>
-              </div>
-              <div className="pillar-item">
-                <span className="pillar-icon pi-lime"><Lightbulb size={14} /></span>
-                <span className="pillar-text">Drive Strategic Decisions</span>
-              </div>
-            </div>
+          
+          <div className="code-content">
+            <pre>
+              <code>
+                <span className="keyword">const</span> <span className="variable">analyst</span> = &#123;{'\n'}
+                {'  '}<span className="property">name</span>: <span className="string">'Harun Jeynaro'</span>,{'\n'}
+                {'  '}<span className="property">education</span>: <span className="string">'Brawijaya University'</span>,{'\n'}
+                {'  '}<span className="property">major</span>: <span className="string">'Information Systems'</span>,{'\n'}
+                {'  '}<span className="property">focus</span>: [{'\n'}
+                {'    '}<span className="string">'Business Analysis'</span>,{'\n'}
+                {'    '}<span className="string">'Data Analysis'</span>{'\n'}
+                {'  '}],{'\n'}
+                {'  '}<span className="property">passion</span>: <span className="string">'Digital Transformation'</span>,{'\n'}
+                {'  '}<span className="property">gpa</span>: <span className="number">3.70</span>{'\n'}
+                &#125;;
+              </code>
+            </pre>
           </div>
         </div>
       </div>

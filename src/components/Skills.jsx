@@ -4,7 +4,7 @@ import tableauIcon from '../assets/tableau.svg';
 import powerBiIcon from '../assets/powerbi.svg';
 import excelIcon from '../assets/excel.svg';
 import javaIcon from '../assets/java.svg';
-import seabornIcon from '../assets/seaborn.svg';
+import seabornIcon from '../assets/seaborn.svg';  
 import matplotlibIcon from '../assets/matplotlib.svg';
 import './Skills.css';
 
@@ -44,7 +44,7 @@ const Skills = () => {
         { name: 'Numpy', image: getIconUrl('numpy') },
         { name: 'Pandas', image: getIconUrl('pandas') },
         { name: 'Matplotlib', image: matplotlibIcon },
-        { name: 'Seaborn', image: seabornIcon },
+        { name: 'Seaborn', image: seabornIcon }, 
       ]
     },
     {
@@ -73,7 +73,7 @@ const Skills = () => {
     <section id="skills" className="section-skills section">
       <div className="container">
         <h2 className="section-title">Skills &amp; Expertise</h2>
-
+        
         <div className="skills-bento-grid">
           {skills.map((category) => (
             <div key={category.id} className="bento-card skill-bento-card" style={{ '--card-accent': category.color }}>

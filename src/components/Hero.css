@@ -128,146 +128,82 @@
   box-shadow: var(--neo-shadow-active);
 }
 
-/* Right Column Stack */
-.hero-stack-column {
+/* Code Visualizer Card */
+.hero-visual-card {
+  background-color: #1e1e24; /* Keep terminal dark for high contrast dev styling */
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  padding: 0; /* Remove default padding for bar */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   height: 100%;
 }
 
-.hero-stat-card {
-  flex: 1;
+.card-topbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  background-color: var(--color-white);
-  border: var(--neo-border);
-  box-shadow: var(--neo-shadow);
-  padding: 1.5rem;
-}
-
-/* Academic Card Custom Layout */
-.academic-card {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-white);
+  border-bottom: var(--neo-border);
 }
 
-.stat-card-row {
+.dots-group {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  gap: 0.4rem;
 }
 
-.stat-icon-box {
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--color-black);
-  background-color: var(--color-da);
-  color: var(--color-black);
+/* Neo-Brutalist Terminal Control: Sharp square boxes */
+.dots-group .dot {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--color-black);
+}
+
+.dot-red { background-color: #ef4444; }
+.dot-yellow { background-color: #fbbf24; }
+.dot-green { background-color: #22c55e; }
+
+.window-title {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 2px 0px var(--color-black);
-}
-
-.stat-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
-}
-
-.stat-value {
-  font-size: 1.4rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-black);
-  line-height: 1.2;
-}
-
-.stat-subtext {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-top: 0.15rem;
-}
-
-.gpa-badge {
-  align-self: flex-start;
-  display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-black);
-  background-color: var(--color-ba);
-  border: 2px solid var(--color-black);
-  padding: 0.3rem 0.65rem;
-  box-shadow: 2px 2px 0px var(--color-black);
-}
-
-/* Pillars Card Custom Layout */
-.pillars-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.pillars-title {
-  font-size: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-black);
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.02em;
-}
-
-.pillars-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.pillar-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.pillar-icon {
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid var(--color-black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-black);
-  box-shadow: 1.5px 1.5px 0px var(--color-black);
-}
-
-.pi-ba { background-color: var(--color-ba); }
-.pi-da { background-color: var(--color-da); }
-.pi-lime { background-color: var(--color-lime); }
-
-.pillar-text {
-  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-black);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
 }
+
+.code-content {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  overflow-x: auto;
+}
+
+/* Custom dark scrollbar for terminal window */
+.code-content::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+  background: #1e1e24;
+  border-left: none;
+  border-top: 2px solid var(--color-black);
+}
+
+.code-content::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+  border: 1px solid #1e1e24;
+}
+
+.code-content .keyword { color: #f472b6; font-weight: 700; }
+.code-content .variable { color: #38bdf8; }
+.code-content .property { color: #a78bfa; }
+.code-content .string { color: #fb7185; }
+.code-content .number { color: #34d399; }
 
 @media (max-width: 992px) {
   .hero-bento-grid {
