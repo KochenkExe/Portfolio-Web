@@ -1,47 +1,73 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Sparkles, GraduationCap, Trophy, Search, BarChart3, Lightbulb } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
   return (
-    <section id="hero" className="hero">
-      <div className="container hero-content">
-        <div className="hero-text">
-          <p className="greeting">Hello, I'm an Information Systems Student</p>
-          <h1 className="title">
-            Bridging the gap between <br />
-            <span className="role-ba">Business Strategy</span> &{' '}
-            <span className="role-fe">Technical Execution</span>
+    <section id="hero" className="section-hero container">
+      <div className="hero-bento-grid">
+        {/* Main Introduction Card */}
+        <div className="bento-card hero-intro-card">
+          <div className="badge">
+            <Sparkles size={14} className="badge-icon" />
+            <span>Information Systems Student</span>
+          </div>
+          
+          <h1 className="hero-title">
+            Bridging <span className="highlight-ba">Business Strategy</span> &amp; <br />
+            <span className="highlight-fe">Data Analytics</span>
           </h1>
-          <p className="subtitle">
-            I create seamless digital experiences by combining <strong>Business Skills</strong> with <strong>Technical</strong> expertise.
+          
+          <p className="hero-subtitle">
+            I solve complex business challenges by merging business analysis, requirements engineering, and data-driven insights.
           </p>
           
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
-              View Work <ArrowRight size={18} />
+              <span>View My Work</span>
+              <ArrowRight size={16} />
             </a>
             <a href="#contact" className="btn btn-secondary">
               Contact Me
             </a>
           </div>
         </div>
-        
-        <div className="hero-visual">
-          {/* Abstract visual representing duality */}
-          <div className="duality-orb">
-            <div className="orb orb-ba"></div>
-            <div className="orb orb-fe"></div>
-            <div className="glass-card">
-              <div className="code-snippet">
-                <code>
-                  <span className="keyword">const</span> <span className="var">profile</span> = {'{'} <br/>
-                  &nbsp;&nbsp;<span className="key">name</span>: <span className="string">"Harun Jeynaro Dewantoro Putra"</span>,<br/>
-                  &nbsp;&nbsp;<span className="key">role</span>: <span className="string">"Data Analyst & FE Engineer"</span>,<br/>
-                  &nbsp;&nbsp;<span className="key">skills</span>: [<span className="string">"Python"</span>, <span className="string">"Java"</span>, <span className="string">"React"</span>],<br/>
-                  &nbsp;&nbsp;<span className="key">goal</span>: <span className="string">"Driving Digital Transformation"</span><br/>
-                  {'}'};
-                </code>
+
+        {/* Right Column Stack */}
+        <div className="hero-stack-column">
+          {/* Card 2: Academic Profile */}
+          <div className="bento-card hero-stat-card academic-card">
+            <div className="stat-card-row">
+              <div className="stat-icon-box">
+                <GraduationCap size={24} />
+              </div>
+              <div className="stat-content">
+                <span className="stat-label">Education</span>
+                <h3 className="stat-value">Brawijaya University</h3>
+                <p className="stat-subtext">Information Systems Major</p>
+              </div>
+            </div>
+            <div className="gpa-badge">
+              <Trophy size={16} />
+              <span>GPA 3.70</span>
+            </div>
+          </div>
+
+          {/* Card 3: Philosophy / Pillars */}
+          <div className="bento-card hero-stat-card pillars-card">
+            <h4 className="pillars-title">Core Approach</h4>
+            <div className="pillars-list">
+              <div className="pillar-item">
+                <span className="pillar-icon pi-ba"><Search size={14} /></span>
+                <span className="pillar-text">Elicit Requirements</span>
+              </div>
+              <div className="pillar-item">
+                <span className="pillar-icon pi-da"><BarChart3 size={14} /></span>
+                <span className="pillar-text">Transform &amp; Analyze Data</span>
+              </div>
+              <div className="pillar-item">
+                <span className="pillar-icon pi-lime"><Lightbulb size={14} /></span>
+                <span className="pillar-text">Drive Strategic Decisions</span>
               </div>
             </div>
           </div>

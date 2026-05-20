@@ -1,108 +1,191 @@
+/* 
+   Neo-Brutalist Design System - Bright, High Contrast, Sharp Corners
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+
 :root {
+  /* Fonts */
+  --font-sans: 'Space Grotesk', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', Consolas, Monaco, monospace;
+
   /* Colors */
-  --color-bg: #0f172a;
-  --color-bg-secondary: #1e293b;
-  --color-text: #f8fafc;
-  --color-text-muted: #94a3b8;
+  --bg-primary: #f6f6f2; /* Creamy off-white */
+  --bg-card: #ffffff;
   
-  /* Role Colors */
-  --color-ba: #38bdf8; /* Sky Blue for Business Analyst (Professional, Clear) */
-  --color-fe: #c084fc; /* Purple for Front End (Creative, Tech) */
-  --color-accent: #f472b6; /* Pink for highlights */
+  /* Saturated Neon/Bright Accents */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-primary: #2563eb; /* Royal Blue */
+  --color-ba: #facc15;      /* Bright Yellow */
+  --color-da: #06b6d4;      /* Saturated Cyan */
+  --color-fe: #ec4899;      /* Hot Pink */
+  --color-ml: #8b5cf6;      /* Vivid Purple */
+  --color-orange: #f97316;  /* Bright Orange */
+  --color-lime: #84cc16;    /* Lime Green */
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-  /* Spacing & Layout */
-  --container-width: 1200px;
-  --header-height: 80px;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 4rem;
-
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Text Colors (High Contrast) */
+  --text-primary: #000000;
+  --text-muted: #27272a;
+  
+  /* Neo-Brutalist Layout Tokens */
+  --neo-border-width: 3px;
+  --neo-border: var(--neo-border-width) solid var(--color-black);
+  
+  /* Shadow offset */
+  --neo-shadow-size: 6px;
+  --neo-shadow: var(--neo-shadow-size) var(--neo-shadow-size) 0px var(--color-black);
+  --neo-shadow-hover: 10px 10px 0px var(--color-black);
+  --neo-shadow-active: 2px 2px 0px var(--color-black);
+  
+  /* Transitions */
+  --transition-neo: 0.1s ease;
 }
 
+/* Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border-radius: 0 !important; /* Force no border-radius anywhere */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
-  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-}
-
-/* Utilities */
 .container {
-  max-width: var(--container-width);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 1.5rem;
 }
 
-/* Scrollbar */
+/* Sections */
+.section {
+  padding: 5rem 0;
+  border-bottom: var(--neo-border);
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+  display: inline-block;
+  background-color: var(--color-orange);
+  color: var(--color-black);
+  padding: 0.5rem 1.5rem;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  transform: rotate(-1deg);
+}
+
+/* Bento Card Base - Neo Brutalist style */
+.bento-card {
+  background-color: var(--bg-card);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  padding: 2rem;
+  transition: transform var(--transition-neo), box-shadow var(--transition-neo);
+  position: relative;
+}
+
+.bento-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--neo-shadow-hover);
+}
+
+.bento-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: var(--neo-shadow-active);
+}
+
+/* Buttons */
+.btn-neo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background-color: var(--color-ba);
+  border: var(--neo-border);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--neo-shadow);
+  transition: transform var(--transition-neo), box-shadow var(--transition-neo);
+}
+
+.btn-neo:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--neo-shadow-hover);
+  background-color: var(--color-ba); /* Keep or change to active color */
+}
+
+.btn-neo:active {
+  transform: translate(3px, 3px);
+  box-shadow: var(--neo-shadow-active);
+}
+
+.btn-neo-secondary {
+  background-color: var(--color-white);
+}
+.btn-neo-secondary:hover {
+  background-color: #f3f4f6;
+}
+
+/* Custom Highlight colors (Neo-Brutalist text classes) */
+.txt-ba {
+  background-color: var(--color-ba);
+  padding: 0 0.2rem;
+  font-weight: 700;
+}
+
+.txt-da {
+  background-color: var(--color-da);
+  padding: 0 0.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.txt-fe {
+  background-color: var(--color-fe);
+  padding: 0 0.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.txt-ml {
+  background-color: var(--color-ml);
+  padding: 0 0.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--bg-primary);
+  border-left: var(--neo-border);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--color-bg-secondary);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-@media (max-width: 480px) {
-  :root {
-    --header-height: 70px;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 3rem;
-  }
-  
-  body {
-    font-size: 15px;
-  }
-
-  .container {
-    padding: 0 var(--spacing-md);
-  }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
+  background: var(--color-black);
+  border: 2px solid var(--bg-primary);
 }

@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code, BarChart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check if user has scrolled to add background blur/border effect
+      setScrolled(window.scrollY > 20);
+
       const sections = document.querySelectorAll('section');
       let currentSection = 'hero';
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        // Trigger when scroll passes 1/3 of the section or reaches near top
-        // The -150 offset accounts for the fixed header
-        if (window.scrollY >= (sectionTop - 150)) {
+        if (window.scrollY >= (sectionTop - 120)) {
           currentSection = section.id;
         }
       });
 
-      // Special case: if at bottom of page, activate Contact
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      // Special case: bottom of the page
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
         currentSection = 'contact';
       }
 
@@ -37,34 +39,40 @@ const Header = () => {
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'education', label: 'Education' },
-    { id: 'achievements', label: 'Achievements' },
+    { id: 'timeline', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];
 
   return (
-    <header className="header">
-      <div className="container header-content">
-        <div className="logo">
-          <span className="logo-text">Harun <span className="highlight-ba"> Jeynaro</span></span>
-        </div>
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container header-container">
+        <a href="#hero" className="logo" aria-label="Harun Jeynaro logo">
+          <span className="logo-first">Harun</span>
+          <span className="logo-second">Jeynaro</span>
+        </a>
 
-        <nav className={`nav ${isOpen ? 'open' : ''}`}>
+        <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
           {navLinks.map(link => (
             <a 
               key={link.id}
               href={`#${link.id}`} 
-              className={activeSection === link.id ? 'active' : ''}
+              className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               {link.label}
+              {activeSection === link.id && <span className="active-dot"></span>}
             </a>
           ))}
         </nav>
 
-        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <button 
+          className="menu-btn" 
+          onClick={() => setIsOpen(!isOpen)} 
+          aria-label="Toggle Navigation Menu"
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
     </header>

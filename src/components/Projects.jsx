@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, Folder } from 'lucide-react';
-import './Projects.css';
-
+import { ExternalLink, Folder, RefreshCw } from 'lucide-react';
 import { supabase } from '../supabaseClient';
+import './Projects.css';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -33,66 +32,96 @@ const Projects = () => {
     ? projects 
     : projects.filter(p => p.category === filter);
 
-  if (loading) {
-     return (
-       <section id="projects" className="section-projects">
-         <div className="container">
-           <h2 className="section-title">Featured Projects</h2>
-           <div className="loading-container" style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: '2rem' }}>
-             Loading projects...
-           </div>
-         </div>
-       </section>
-     );
-  }
-
   return (
-    <section id="projects" className="section-projects">
+    <section id="projects" className="section-projects section">
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         
-        <div className="filter-controls">
-          <button 
-            className={`filter-btn ${filter === 'all' ? 'active' : ''}`} 
-            onClick={() => setFilter('all')}
-          >
-            All Work
-          </button>
-          <button 
-            className={`filter-btn ${filter === 'ba' ? 'active' : ''}`} 
-            onClick={() => setFilter('ba')}
-          >
-            Business / Data Analysis
-          </button>
-          <button 
-            className={`filter-btn ${filter === 'fe' ? 'active' : ''}`} 
-            onClick={() => setFilter('fe')}
-          >
-            Web Development
-          </button>
+        {/* Filter Controls */}
+        <div className="filter-wrapper">
+          <div className="filter-controls">
+            <button 
+              className={`filter-btn ${filter === 'all' ? 'active' : ''}`} 
+              onClick={() => setFilter('all')}
+            >
+              All Work
+            </button>
+            <button 
+              className={`filter-btn ${filter === 'ba' ? 'active' : ''}`} 
+              onClick={() => setFilter('ba')}
+            >
+              Business &amp; Analytics
+            </button>
+            <button 
+              className={`filter-btn ${filter === 'fe' ? 'active' : ''}`} 
+              onClick={() => setFilter('fe')}
+            >
+              Web Development
+            </button>
+          </div>
         </div>
 
-        <div className="projects-grid">
-          {filteredProjects.map(project => (
-            <div key={project.id} className={`project-card ${project.category}`}>
-              <div className="card-header">
-                <Folder size={24} className="folder-icon" />
-                <div className="card-links">
-                  <a href={project.project_url} target="_blank" rel="noopener noreferrer" aria-label="View Link">
-                    <ExternalLink size={20} />
-                  </a>
+        {/* Projects Loading State */}
+        {loading ? (
+          <div className="projects-grid">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="bento-card project-card skeleton-card">
+                <div className="skeleton-header">
+                  <div className="skeleton-icon"></div>
+                  <div className="skeleton-link"></div>
+                </div>
+                <div className="skeleton-title"></div>
+                <div className="skeleton-desc"></div>
+                <div className="skeleton-desc short"></div>
+                <div className="skeleton-tags">
+                  <div className="skeleton-tag"></div>
+                  <div className="skeleton-tag"></div>
+                  <div className="skeleton-tag"></div>
                 </div>
               </div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
+            ))}
+          </div>
+        ) : (
+          /* Projects Grid */
+          <div className="projects-grid">
+            {filteredProjects.map((project) => (
+              <div key={project.id} className={`bento-card project-card category-${project.category}`}>
+                <div className="project-card-header">
+                  <div className="project-icon-box">
+                    <Folder size={20} />
+                  </div>
+                  <a 
+                    href={project.project_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-link-btn"
+                    aria-label={`View external project: ${project.title}`}
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                </div>
+                
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="project-tag-chip">{tag}</span>
+                  ))}
+                </div>
+
+                {/* Overlay Accent Line */}
+                <div className="project-accent-bar"></div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+
+            {filteredProjects.length === 0 && (
+              <div className="no-projects bento-card">
+                <p>No projects found in this category.</p>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

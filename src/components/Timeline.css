@@ -1,0 +1,153 @@
+.timeline-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.timeline-card {
+  background-color: var(--color-white);
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  height: 100%;
+}
+
+.card-education:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--color-ba);
+}
+
+.card-achievements:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--color-ml);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-black);
+  padding-bottom: 0.75rem;
+}
+
+.timeline-header-icon {
+  color: var(--color-black);
+  background-color: var(--color-ba);
+  padding: 0.25rem;
+  border: 2px solid var(--color-black);
+  box-shadow: 2px 2px 0px var(--color-black);
+  display: block;
+  box-sizing: content-box;
+}
+
+.card-achievements .timeline-header-icon {
+  background-color: var(--color-ml);
+  color: var(--color-white);
+}
+
+.timeline-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.timeline-items {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--color-black);
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Square dots for brutalist design */
+.timeline-dot {
+  position: absolute;
+  left: calc(-1.5rem - 7.5px);
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-black);
+  transition: background-color var(--transition-neo);
+}
+
+.card-education:hover .timeline-dot {
+  background-color: var(--color-ba);
+}
+
+.card-achievements:hover .timeline-dot {
+  background-color: var(--color-ml);
+}
+
+.timeline-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.timeline-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border: 1.5px solid var(--color-black);
+  color: var(--color-black);
+  box-shadow: 1.5px 1.5px 0px var(--color-black);
+  text-transform: uppercase;
+}
+
+.badge-gpa {
+  background-color: var(--color-ba);
+}
+
+.badge-grade {
+  background-color: var(--color-ml);
+  color: var(--color-white);
+}
+
+.timeline-item-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.timeline-item-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.timeline-item-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}

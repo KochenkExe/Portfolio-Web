@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Code2, LineChart, Layout, Terminal, BarChart, Server, Globe, Cpu, GitBranch, PenTool, ClipboardList } from 'lucide-react';
+import { Terminal, LineChart, Layout, Database, BarChart, GitBranch, Globe, ClipboardList, PenTool } from 'lucide-react';
 import tableauIcon from '../assets/tableau.svg';
 import powerBiIcon from '../assets/powerbi.svg';
 import excelIcon from '../assets/excel.svg';
@@ -9,35 +9,35 @@ import matplotlibIcon from '../assets/matplotlib.svg';
 import './Skills.css';
 
 const Skills = () => {
-  // Helper to get Simple Icons URL
-  // Using a slightly off-white color (dddddd) for better visibility on dark backgrounds
-  const getIconUrl = (slug) => `https://cdn.simpleicons.org/${slug}/dddddd`;
+  const getIconUrl = (slug) => `https://cdn.simpleicons.org/${slug}/000000`;
 
   const skills = [
     {
+      id: 'languages',
       role: 'Programming Languages',
-      icon: <Terminal size={32} />,
+      icon: <Terminal size={24} />,
       color: '#f472b6',
       items: [
         { name: 'Python', image: getIconUrl('python') },
         { name: 'Java', image: javaIcon },
         { name: 'JavaScript', image: getIconUrl('javascript') },
-        { name: 'SQL', icon: <Database size={18} /> },
+        { name: 'SQL', icon: <Database size={16} /> },
         { name: 'PHP', image: getIconUrl('php') },
         { name: 'Kotlin', image: getIconUrl('kotlin') },
       ]
     },
     {
+      id: 'analytics',
       role: 'Analytics & Business Intelligence',
-      icon: <LineChart size={32} />,
+      icon: <LineChart size={24} />,
       color: 'var(--color-ba)',
       items: [
-        { name: 'Data Analysis', icon: <LineChart size={18} /> },
-        { name: 'Business Intelligence', icon: <BarChart size={18} /> },
-        { name: 'Flowchart', icon: <GitBranch size={18} /> },
-        { name: 'Requirement Gathering', icon: <ClipboardList size={18} /> },
-        { name: 'Project Management', icon: <Globe size={18} /> },
-        { name: 'User Story', icon: <PenTool size={18} /> },
+        { name: 'Data Analysis', icon: <LineChart size={16} /> },
+        { name: 'Business Intelligence', icon: <BarChart size={16} /> },
+        { name: 'Flowchart', icon: <GitBranch size={16} /> },
+        { name: 'Requirement Gathering', icon: <ClipboardList size={16} /> },
+        { name: 'Project Management', icon: <Globe size={16} /> },
+        { name: 'User Story', icon: <PenTool size={16} /> },
         { name: 'Excel', image: excelIcon },
         { name: 'Tableau', image: tableauIcon },
         { name: 'Power BI', image: powerBiIcon },
@@ -45,20 +45,16 @@ const Skills = () => {
         { name: 'Pandas', image: getIconUrl('pandas') },
         { name: 'Matplotlib', image: matplotlibIcon },
         { name: 'Seaborn', image: seabornIcon }, 
-        { name: 'Scikit-learn', image: getIconUrl('scikitlearn') },
-        { name: 'TensorFlow', image: getIconUrl('tensorflow') },
-        { name: 'PyTorch', image: getIconUrl('pytorch') },
-        { name: 'Jupyter', image: getIconUrl('jupyter') },
-        { name: 'Anaconda', image: getIconUrl('anaconda') },
       ]
     },
     {
+      id: 'webdev',
       role: 'Web Development',
-      icon: <Layout size={32} />,
+      icon: <Layout size={24} />,
       color: 'var(--color-fe)',
       items: [
         { name: 'HTML', image: getIconUrl('html5') },
-        { name: 'CSS', image: getIconUrl('css') },
+        { name: 'CSS', image: getIconUrl('css3') },
         { name: 'React.js', image: getIconUrl('react') },
         { name: 'Bootstrap', image: getIconUrl('bootstrap') },
         { name: 'Tailwind CSS', image: getIconUrl('tailwindcss') },
@@ -74,32 +70,34 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-skills">
+    <section id="skills" className="section-skills section">
       <div className="container">
-        <h2 className="section-title">Skills & Expertise</h2>
-        <div className="skills-grid">
-          {skills.map((category, index) => (
-            <div key={index} className="skill-category" style={{ '--accent-color': category.color }}>
-              <div className="category-header">
-                <div className="icon-wrapper" style={{ color: category.color }}>
+        <h2 className="section-title">Skills &amp; Expertise</h2>
+        
+        <div className="skills-bento-grid">
+          {skills.map((category) => (
+            <div key={category.id} className="bento-card skill-bento-card" style={{ '--card-accent': category.color }}>
+              <div className="skill-cat-header">
+                <div className="skill-cat-icon">
                   {category.icon}
                 </div>
-                <h3>{category.role}</h3>
+                <h3 className="skill-cat-title">{category.role}</h3>
               </div>
-              <ul className="skill-list">
-                {category.items.map((item, i) => (
-                  <li key={i}>
-                    <span className="skill-icon">
+
+              <div className="skill-items-container">
+                {category.items.map((item, index) => (
+                  <div key={index} className="skill-item">
+                    <span className="skill-item-icon">
                       {item.image ? (
-                        <img src={item.image} alt={item.name} width="18" height="18" />
+                        <img src={item.image} alt={item.name} />
                       ) : (
                         item.icon
                       )}
                     </span>
-                    {item.name}
-                  </li>
+                    <span className="skill-item-name">{item.name}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -109,5 +107,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-
