@@ -91,6 +91,11 @@
   background-color: var(--color-ba);
 }
 
+.project-link-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
+
 .project-title {
   font-size: 1.35rem;
   font-weight: 800;
@@ -134,9 +139,19 @@
   box-shadow: 8px 8px 0px var(--color-ba);
 }
 
+.category-ba:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
+
 .category-fe:hover {
   transform: translate(-4px, -4px);
   box-shadow: 8px 8px 0px var(--color-fe);
+}
+
+.category-fe:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
 }
 
 /* Skeletons - Brutalist solid stripes style */

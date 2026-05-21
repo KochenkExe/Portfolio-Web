@@ -114,6 +114,10 @@
   box-shadow: 8px 8px 0px var(--color-ml);
   background-color: #fcfbff;
 }
+.resume-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
 .resume-card:hover .social-icon-wrapper {
   background-color: var(--color-ml);
   color: var(--color-white);
@@ -128,6 +132,10 @@
   box-shadow: 8px 8px 0px var(--color-ba);
   background-color: #fffef0;
 }
+.email-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
 .email-card:hover .social-icon-wrapper {
   background-color: var(--color-ba);
 }
@@ -141,6 +149,10 @@
   box-shadow: 8px 8px 0px var(--color-da);
   background-color: #f0fdff;
 }
+.linkedin-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
 .linkedin-card:hover .social-icon-wrapper {
   background-color: var(--color-da);
 }
@@ -153,6 +165,10 @@
   transform: translate(-4px, -4px);
   box-shadow: 8px 8px 0px var(--color-fe);
   background-color: #fff0f7;
+}
+.github-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
 }
 .github-card:hover .social-icon-wrapper {
   background-color: var(--color-fe);

@@ -16,9 +16,19 @@
   box-shadow: 8px 8px 0px var(--color-ba);
 }
 
+.card-education:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
+
 .card-achievements:hover {
   transform: translate(-4px, -4px);
   box-shadow: 8px 8px 0px var(--color-ml);
+}
+
+.card-achievements:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px var(--color-black);
 }
 
 .timeline-header {
