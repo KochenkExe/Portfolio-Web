@@ -16,26 +16,26 @@ const Hero = () => {
             <Sparkles size={14} className="badge-icon" />
             <span>Information Systems Student</span>
           </div>
-          
+
           <h1 className="hero-title">
             Bridging <span className="highlight-ba">Business Strategy</span> &amp; <br />
             <span className="highlight-fe">Data Analytics</span>
           </h1>
-          
+
           <p className="hero-subtitle">
             I solve complex business challenges by merging business analysis, requirements engineering, and data-driven insights.
           </p>
-          
+
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
               <span>View My Work</span>
               <ArrowRight size={16} />
             </a>
             {resumeUrl && (
-              <a 
-                href={resumeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-resume"
               >
                 <FileText size={16} />
@@ -61,7 +61,7 @@ const Hero = () => {
               <span>profile.py</span>
             </div>
           </div>
-          
+
           <div className="code-content">
             <pre>
               <code>
