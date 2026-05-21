@@ -43,24 +43,24 @@ const Hero = () => {
             </div>
             <div className="window-title">
               <Terminal size={14} />
-              <span>profile.js</span>
+              <span>profile.py</span>
             </div>
           </div>
           
           <div className="code-content">
             <pre>
               <code>
-                <span className="keyword">const</span> <span className="variable">analyst</span> = &#123;{'\n'}
-                {'  '}<span className="property">name</span>: <span className="string">'Harun Jeynaro'</span>,{'\n'}
-                {'  '}<span className="property">education</span>: <span className="string">'Brawijaya University'</span>,{'\n'}
-                {'  '}<span className="property">major</span>: <span className="string">'Information Systems'</span>,{'\n'}
-                {'  '}<span className="property">focus</span>: [{'\n'}
-                {'    '}<span className="string">'Business Analysis'</span>,{'\n'}
-                {'    '}<span className="string">'Data Analysis'</span>{'\n'}
+                <span className="variable">analyst</span> = &#123;{'\n'}
+                {'  '}<span className="string">"name"</span>: <span className="string">"Harun Jeynaro"</span>,{'\n'}
+                {'  '}<span className="string">"education"</span>: <span className="string">"Brawijaya University"</span>,{'\n'}
+                {'  '}<span className="string">"major"</span>: <span className="string">"Information Systems"</span>,{'\n'}
+                {'  '}<span className="string">"focus"</span>: [{'\n'}
+                {'    '}<span className="string">"Business Analysis"</span>,{'\n'}
+                {'    '}<span className="string">"Data Analysis"</span>{'\n'}
                 {'  '}],{'\n'}
-                {'  '}<span className="property">passion</span>: <span className="string">'Digital Transformation'</span>,{'\n'}
-                {'  '}<span className="property">gpa</span>: <span className="number">3.70</span>{'\n'}
-                &#125;;
+                {'  '}<span className="string">"passion"</span>: <span className="string">"Digital Transformation"</span>,{'\n'}
+                {'  '}<span className="string">"gpa"</span>: <span className="number">3.70</span>{'\n'}
+                &#125;
               </code>
             </pre>
           </div>
