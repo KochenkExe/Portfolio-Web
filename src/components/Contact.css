@@ -111,11 +111,12 @@
 /* Hover States with bright offset shadows */
 .resume-card:hover {
   transform: translate(-4px, -4px);
-  box-shadow: 8px 8px 0px var(--color-lime);
-  background-color: #f7fff0;
+  box-shadow: 8px 8px 0px var(--color-ml);
+  background-color: #fcfbff;
 }
 .resume-card:hover .social-icon-wrapper {
-  background-color: var(--color-lime);
+  background-color: var(--color-ml);
+  color: var(--color-white);
 }
 .resume-card:hover .arrow-icon {
   opacity: 1;

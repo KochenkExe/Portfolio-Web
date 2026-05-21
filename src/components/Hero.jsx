@@ -1,8 +1,12 @@
-import React from 'react';
-import { ArrowRight, Sparkles, Terminal } from 'lucide-react';
+import { ArrowRight, Sparkles, Terminal, FileText } from 'lucide-react';
+import { supabase } from '../supabaseClient';
 import './Hero.css';
 
 const Hero = () => {
+  // Retrieve the public URL dynamically from Supabase storage
+  const { data } = supabase.storage.from('for Stuffs').getPublicUrl('ats-resume.pdf');
+  const resumeUrl = data?.publicUrl;
+
   return (
     <section id="hero" className="section-hero container">
       <div className="hero-bento-grid">
@@ -27,6 +31,17 @@ const Hero = () => {
               <span>View My Work</span>
               <ArrowRight size={16} />
             </a>
+            {resumeUrl && (
+              <a 
+                href={resumeUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-resume"
+              >
+                <FileText size={16} />
+                <span>Resume</span>
+              </a>
+            )}
             <a href="#contact" className="btn btn-secondary">
               Contact Me
             </a>

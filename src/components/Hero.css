@@ -113,6 +113,22 @@
   box-shadow: var(--neo-shadow-active);
 }
 
+.hero-actions .btn-resume {
+  background-color: var(--color-ml);
+  color: var(--color-white);
+}
+
+.hero-actions .btn-resume:hover {
+  background-color: var(--color-ml);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--neo-shadow-hover);
+}
+
+.hero-actions .btn-resume:active {
+  transform: translate(3px, 3px);
+  box-shadow: var(--neo-shadow-active);
+}
+
 .hero-actions .btn-secondary {
   background-color: var(--color-white);
 }
