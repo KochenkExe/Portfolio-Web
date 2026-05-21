@@ -109,6 +109,19 @@
 }
 
 /* Hover States with bright offset shadows */
+.resume-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--color-lime);
+  background-color: #f7fff0;
+}
+.resume-card:hover .social-icon-wrapper {
+  background-color: var(--color-lime);
+}
+.resume-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .email-card:hover {
   transform: translate(-4px, -4px);
   box-shadow: 8px 8px 0px var(--color-ba);
