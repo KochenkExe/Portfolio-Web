@@ -1,15 +1,41 @@
-import React from 'react';
 import { Terminal, LineChart, Layout, Database, BarChart, GitBranch, Globe, ClipboardList, PenTool } from 'lucide-react';
 import tableauIcon from '../assets/tableau.svg';
 import powerBiIcon from '../assets/powerbi.svg';
 import excelIcon from '../assets/excel.svg';
 import javaIcon from '../assets/java.svg';
-import seabornIcon from '../assets/seaborn.svg';  
+import seabornIcon from '../assets/seaborn.svg';
 import matplotlibIcon from '../assets/matplotlib.svg';
+import numpyIcon from '../assets/numpy.svg';
+import pandasIcon from '../assets/pandas.svg';
 import './Skills.css';
 
+const svglIcons = {
+  python: 'https://svgl.app/library/python.svg',
+  javascript: 'https://svgl.app/library/javascript.svg',
+  php: 'https://svgl.app/library/php.svg',
+  kotlin: 'https://svgl.app/library/kotlin.svg',
+  html5: 'https://svgl.app/library/html5.svg',
+  css: 'https://svgl.app/library/css.svg',
+  react: 'https://svgl.app/library/react_light.svg',
+  bootstrap: 'https://svgl.app/library/bootstrap.svg',
+  tailwindcss: 'https://svgl.app/library/tailwindcss.svg',
+  git: 'https://svgl.app/library/git.svg',
+  vite: 'https://svgl.app/library/vite.svg',
+  supabase: 'https://svgl.app/library/supabase.svg',
+  mysql: 'https://svgl.app/library/mysql-icon-light.svg',
+  postgresql: 'https://svgl.app/library/postgresql.svg',
+  figma: 'https://svgl.app/library/figma.svg',
+};
+
 const Skills = () => {
-  const getIconUrl = (slug) => `https://cdn.simpleicons.org/${slug}/000000`;
+  const getIconUrl = (slug) => {
+    if (svglIcons[slug]) {
+      return svglIcons[slug];
+    }
+    // Fallback to brand-colored Simple Icons for missing assets (e.g. numpy, pandas, phpmyadmin)
+    return `https://cdn.simpleicons.org/${slug}`;
+  };
+
 
   const skills = [
     {
@@ -41,10 +67,10 @@ const Skills = () => {
         { name: 'Excel', image: excelIcon },
         { name: 'Tableau', image: tableauIcon },
         { name: 'Power BI', image: powerBiIcon },
-        { name: 'Numpy', image: getIconUrl('numpy') },
-        { name: 'Pandas', image: getIconUrl('pandas') },
+        { name: 'Numpy', image: numpyIcon },
+        { name: 'Pandas', image: pandasIcon },
         { name: 'Matplotlib', image: matplotlibIcon },
-        { name: 'Seaborn', image: seabornIcon }, 
+        { name: 'Seaborn', image: seabornIcon },
       ]
     },
     {
@@ -73,7 +99,7 @@ const Skills = () => {
     <section id="skills" className="section-skills section">
       <div className="container">
         <h2 className="section-title">Skills &amp; Expertise</h2>
-        
+
         <div className="skills-bento-grid">
           {skills.map((category) => (
             <div key={category.id} className="bento-card skill-bento-card" style={{ '--card-accent': category.color }}>
