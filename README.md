@@ -29,6 +29,7 @@ My personal portfolio website built using React, Vite, and Supabase. The site is
   - Fetches projects dynamically from a PostgreSQL database table.
   - Implements Neo-Brutalist skeleton loaders during database fetch.
   - Dynamically serves my ATS Resume from a Supabase storage bucket.
+- **Interactive Project Popups**: Clicking any project card opens a modal dialog displaying the project's title, descriptive walkthrough, tags, and a public URL preview image dynamically retrieved from Supabase Object Storage.
 - **Vercel Analytics**: Built-in tracking for visitors and site metrics.
 
 ---
