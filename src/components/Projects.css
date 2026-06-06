@@ -236,3 +236,197 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Project Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1.5rem;
+  animation: modal-fade-in 0.2s ease-out;
+}
+
+.project-modal {
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-white);
+  border: var(--neo-border);
+  box-shadow: 12px 12px 0px var(--color-black);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+  animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Override default bento hover/active transforms for active modal dialog */
+.project-modal:hover {
+  transform: none;
+  box-shadow: 12px 12px 0px var(--color-black);
+}
+
+.project-modal:active {
+  transform: none;
+  box-shadow: 12px 12px 0px var(--color-black);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  border: var(--neo-border);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px var(--color-black);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform var(--transition-neo), box-shadow var(--transition-neo), background-color var(--transition-neo);
+}
+
+.modal-close-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--color-black);
+  background-color: var(--color-fe);
+  color: var(--color-white);
+}
+
+.modal-close-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--color-black);
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.modal-image-wrapper {
+  border: var(--neo-border);
+  box-shadow: 6px 6px 0px var(--color-black);
+  background-color: #e4e4e7;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-category-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 0px var(--color-black);
+}
+
+.project-category-badge.category-ba {
+  background-color: var(--color-ba);
+}
+
+.project-category-badge.category-fe {
+  background-color: var(--color-fe);
+  color: var(--color-white);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.modal-tags {
+  margin-bottom: 1.5rem;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.btn-modal-action {
+  box-shadow: 4px 4px 0px var(--color-black);
+}
+
+.btn-modal-close {
+  box-shadow: 4px 4px 0px var(--color-black);
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive modal styling */
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-modal {
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+}
+
