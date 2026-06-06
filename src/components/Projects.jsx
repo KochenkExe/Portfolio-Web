@@ -50,25 +50,7 @@ const Projects = () => {
     };
   }, [selectedProject]);
 
-  const getImageUrl = (project) => {
-    if (project.image_url) return project.image_url;
 
-    const mapping = {
-      1: 'melbourne-housing.png',
-      2: 'supermarket-sales.png',
-      3: 'bike-sharing.png',
-      4: 'customer-segmentation.png',
-      5: 'weather-app.png',
-      6: 'portfolio-web.png',
-      7: 'fcc-data-analysis.png'
-    };
-
-    const fileName = mapping[project.id];
-    if (!fileName) return null;
-
-    const { data } = supabase.storage.from('for Stuffs').getPublicUrl(fileName);
-    return data?.publicUrl || '';
-  };
 
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -194,10 +176,10 @@ const Projects = () => {
             </button>
 
             <div className="modal-body">
-              {getImageUrl(selectedProject) && (
+              {selectedProject.image_url && (
                 <div className="modal-image-wrapper">
                   <img 
-                    src={getImageUrl(selectedProject)} 
+                    src={selectedProject.image_url} 
                     alt={selectedProject.title} 
                     className="modal-image"
                   />
