@@ -1,4 +1,4 @@
-# Harun Jeynaro's Portfolio
+Portfolio Web
 
 My personal portfolio website built using React, Vite, and Supabase. The site is designed with a Neo-Brutalist aesthetic, featuring a high-contrast layout, thick black borders, flat colors, and zero border-radius.
 
@@ -6,30 +6,30 @@ My personal portfolio website built using React, Vite, and Supabase. The site is
 
 ## Design System
 
-* **Style**: Zero border-radius (`border-radius: 0 !important`), high contrast, and flat background/card elements.
-* **Palette**: Saturated accent colors on a creamy off-white background (`#f6f6f2`):
-  * **Royal Blue** (`#2563eb`) - Primary actions and links
-  * **Bright Yellow** (`#facc15`) - Business analysis accents
-  * **Saturated Cyan** (`#06b6d4`) - Data analytics accents
-  * **Hot Pink** (`#ec4899`) - Web development accents
-  * **Bright Orange** (`#f97316`) - Section title accents
-* **Typography**:
-  * Headings & UI: `Space Grotesk` and `Outfit`
-  * Code components: `Space Mono` / monospace
+- **Style**: Sharp corners, high contrast, and flat background/card elements.
+- **Palette**: Saturated accent colors on a creamy off-white background (`#f6f6f2`):
+  - **Royal Blue** (`#2563eb`) - Primary actions and links
+  - **Bright Yellow** (`#facc15`) - Business analysis accents
+  - **Saturated Cyan** (`#06b6d4`) - Data analytics accents
+  - **Hot Pink** (`#ec4899`) - Web development accents
+  - **Bright Orange** (`#f97316`) - Section title accents
+- **Typography**:
+  - Headings & UI: `Space Grotesk` and `Outfit`
+  - Code components: `Space Mono` / monospace
 
 ---
 
 ## Features
 
-* **Bento Grid Layout**: Responsive dashboard-like grid layout optimized for mobile and desktop.
-* **Terminal Mockup**: A simulated console on the hero section displaying a Python dictionary (`profile.py`) with my stats.
-* **Role Focus**: Segmented cards detailing my competencies as a Business Analyst and Data Analyst.
-* **Categorized Skills**: Filtered grids for programming languages, analytics/BI, and web development.
-* **Supabase Backend**:
-  * Fetches projects dynamically from a PostgreSQL database table.
-  * Implements Neo-Brutalist skeleton loaders during database fetch.
-  * Dynamically serves my ATS Resume from a Supabase storage bucket.
-* **Vercel Analytics**: Built-in tracking for visitors and site metrics.
+- **Bento Grid Layout**: Responsive dashboard-like grid layout optimized for mobile and desktop.
+- **Terminal Mockup**: A simulated console on the hero section displaying a Python dictionary (`profile.py`) with my stats.
+- **Role Focus**: Segmented cards detailing my competencies as a Business Analyst and Data Analyst.
+- **Categorized Skills**: Filtered grids for programming languages, analytics/BI, and web development.
+- **Supabase Backend**:
+  - Fetches projects dynamically from a PostgreSQL database table.
+  - Implements Neo-Brutalist skeleton loaders during database fetch.
+  - Dynamically serves my ATS Resume from a Supabase storage bucket.
+- **Vercel Analytics**: Built-in tracking for visitors and site metrics.
 
 ---
 
@@ -70,11 +70,11 @@ Portfolio Web v2/
 
 ## Tech Stack
 
-* **Front-end**: React 19, CSS variables
-* **Tooling**: Vite, ESLint
-* **Backend**: Supabase Database & Object Storage
-* **Icons**: `lucide-react`, `react-icons`
-* **Analytics**: `@vercel/analytics`
+- **Front-end**: React 19, CSS variables
+- **Tooling**: Vite, ESLint
+- **Backend**: Supabase Database & Object Storage
+- **Icons**: `lucide-react`, `react-icons`
+- **Analytics**: `@vercel/analytics`
 
 ---
 
@@ -83,17 +83,20 @@ Portfolio Web v2/
 To run this project locally, ensure you have Node.js installed, then execute:
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/KochenkExe/Portfolio-Web.git
    cd Portfolio-Web
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**:
+
    ```bash
    npm run dev
    ```
