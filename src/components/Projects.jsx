@@ -88,19 +88,22 @@ const Projects = () => {
         {/* Projects Loading State */}
         {loading ? (
           <div className="projects-grid">
-            {[1, 2, 3].map((n) => (
+            {[1, 2].map((n) => (
               <div key={n} className="bento-card project-card skeleton-card">
-                <div className="skeleton-header">
-                  <div className="skeleton-icon"></div>
-                  <div className="skeleton-link"></div>
-                </div>
-                <div className="skeleton-title"></div>
-                <div className="skeleton-desc"></div>
-                <div className="skeleton-desc short"></div>
-                <div className="skeleton-tags">
-                  <div className="skeleton-tag"></div>
-                  <div className="skeleton-tag"></div>
-                  <div className="skeleton-tag"></div>
+                <div className="project-card-image skeleton-image-block"></div>
+                <div className="project-card-body">
+                  <div className="skeleton-header">
+                    <div className="skeleton-icon"></div>
+                    <div className="skeleton-link"></div>
+                  </div>
+                  <div className="skeleton-title"></div>
+                  <div className="skeleton-desc"></div>
+                  <div className="skeleton-desc short"></div>
+                  <div className="skeleton-tags">
+                    <div className="skeleton-tag"></div>
+                    <div className="skeleton-tag"></div>
+                    <div className="skeleton-tag"></div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -115,29 +118,42 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project)}
                 style={{ cursor: 'pointer' }}
               >
-                <div className="project-card-header">
-                  <div className="project-icon-box">
-                    <Folder size={20} />
-                  </div>
-                  <a 
-                    href={project.project_url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="project-link-btn"
-                    aria-label={`View external project: ${project.title}`}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink size={18} />
-                  </a>
+                {/* Project Image */}
+                <div className="project-card-image">
+                  {project.image_url ? (
+                    <img src={project.image_url} alt={project.title} />
+                  ) : (
+                    <div className="project-card-image-placeholder">
+                      <Folder size={32} />
+                    </div>
+                  )}
                 </div>
-                
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
-                
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="project-tag-chip">{tag}</span>
-                  ))}
+
+                <div className="project-card-body">
+                  <div className="project-card-header">
+                    <div className="project-icon-box">
+                      <Folder size={20} />
+                    </div>
+                    <a 
+                      href={project.project_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="project-link-btn"
+                      aria-label={`View external project: ${project.title}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  </div>
+                  
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-desc">{project.description}</p>
+                  
+                  <div className="project-tags">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="project-tag-chip">{tag}</span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Overlay Accent Line */}
